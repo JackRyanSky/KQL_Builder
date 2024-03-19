@@ -88,12 +88,18 @@ function main {
             if ($srcdstboth -eq "1" -or $srcdstboth -eq "3"){
                 write-host "`nYou chose option 1, Source (or both)"
                 foreach ( $line in $(get-content .\IOC_IPs.txt)){
+                    if ($line -match "#"){
+                        continue
+                        }
                     $query = "$query$(lineCheck $line $sourceField)"
                     }
                 }
             if ($srcdstboth -eq "2" -or $srcdstboth -eq "3"){
                 write-host "`nYou chose option 2, Destination (or both)"
-                foreach ( $line in $(get-content .\IOC\IPs.txt)){
+                foreach ( $line in $(get-content .\IOC_IPs.txt)){
+                    if ($line -match "#"){
+                        continue
+                        }
                     $query = "$query$(lineCheck $line $destinationField)"
                     }
                 }
