@@ -1,0 +1,5 @@
+#IOC IP File. Format with CIDR Notation, Comma Deliminated, or single IP addresses
+#Example
+#192.168.0.1/24      <- will match all IPs in the range
+#10.0.0.5,10.0.0.10  <- Will match the IPs from the .5 to the .10
+#8.8.8.8             <- Will match the single IP 8.8.8.8
