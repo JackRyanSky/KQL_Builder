@@ -58,7 +58,7 @@ function main {
                     write-host "`nUnexpected input found, please select a given option"
                     }
                 while ($true){
-                    $filter = $(read-host "`n`nWhich filter would you like to add?`n1) Regex`n2) Exact String Match`n3) Range of IPs`n4) STOP")
+                    $filter = $(read-host "`n`nWhich filter would you like to add?`n1) Regex`n2) Exact String Match`n3) Range of IPs`n4) STOP`n`n")
                     if ($filter -eq "1"){
                         write-host "Regex"
                         }
@@ -83,11 +83,11 @@ function main {
                 }
             }
         elseif ($userinput -eq "3") {
-            $srcdstboth = (read-host "You chose option 3, Large IP list.`nEnsure IPs are in .\IOC\IPs.txt`nAccepts CIDR Notation, comma deliminated and single IPs Example:`n192.168.0.1/24`n10.0.0.0,10.255.255.255`n8.8.8.8`n`n1) Source`n2) Destination`n3) Both")
+            $srcdstboth = (read-host "You chose option 3, Large IP list.`nEnsure IPs are in .\IOC_IPs.txt`nAccepts CIDR Notation, comma deliminated and single IPs Example:`n192.168.0.1/24`n10.0.0.0,10.255.255.255`n8.8.8.8`n1) Source`n2) Destination`n3) Both`n`n")
             $query = addOR
             if ($srcdstboth -eq "1" -or $srcdstboth -eq "3"){
                 write-host "`nYou chose option 1, Source (or both)"
-                foreach ( $line in $(get-content .\IOC\IPs.txt)){
+                foreach ( $line in $(get-content .\IOC_IPs.txt)){
                     $query = "$query$(lineCheck $line $sourceField)"
                     }
                 }
