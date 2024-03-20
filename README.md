@@ -19,3 +19,5 @@ Ex.
 [ ] Multi-Level queries  
 [ ] Anything else (idk)  
 [ ] GUI Support??  
+
+Made by: Jack Ryan
